@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 
 class LogInForm extends React.Component{
 
@@ -32,4 +34,4 @@ class LogInForm extends React.Component{
   }
 }
 
-export default LogInForm
+export default connect()(LogInForm)
