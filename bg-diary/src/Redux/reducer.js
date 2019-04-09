@@ -13,14 +13,24 @@ const reducer =(state= initialState, action)=>{
       }
     case "LOG_IN":
       localStorage.setItem('token',action.payload.jwt)
+      console.log(action.payload);
       return{
         ...state,
         user: action.payload.user
       }
     case "LOG_OUT":
       localStorage.clear()
-      return {...state, user: {} }
-      
+      console.log(action.payload);
+      return {
+        ...state,
+        user: {}
+      }
+    case "SET_USER":
+      return {
+        ...state,
+        user:action.payload.user
+      }
+
     default:
       return state
   }

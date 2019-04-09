@@ -1,14 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/user'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class SignUpForm extends React.Component{
 
   state={
     username:'',
-    password:'',
-    password_confirmation:''
+    password:''
   }
 
   handleChange= event=>{
@@ -22,7 +21,6 @@ class SignUpForm extends React.Component{
     if (this.props.addUser(this.state)) {
       this.props.history.push("/home")
     }
-
   }
 
   render(){
@@ -32,7 +30,6 @@ class SignUpForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder= "Make New Username" name="username" value={this.state.username} onChange={this.handleChange}/>
           <input type="password" placeholder= "Password" name="password" value={this.state.password} onChange={this.handleChange}/>
-          <input type="password" placeholder= "Password Confirmation" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange}/>
           <input type="submit" value= "Submit"/>
         </form>
       </div>
@@ -40,13 +37,4 @@ class SignUpForm extends React.Component{
   }
 }
 
-// const mapDispatchToProps = (dispatch) =>{
-  // return {
-  //   createUser: user => dispatch({
-  //     type:"CREATE_USER",
-  //     payload: user
-  //   })
-  // }
-// }
-
-export default connect(null, {addUser})(withRouter(SignUpForm))
+export default connect(null, { addUser })(withRouter(SignUpForm))

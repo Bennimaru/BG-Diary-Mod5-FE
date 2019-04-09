@@ -13,9 +13,8 @@ class NavBar extends React.Component{
   render(){
     return(
       <div>
-        <button onClick={this.handleLogOut}>Log Out</button>
-
-        Am I Here?
+      Welcome
+      <button onClick={this.handleLogOut}>Log Out</button>  
       </div>
     )
   }

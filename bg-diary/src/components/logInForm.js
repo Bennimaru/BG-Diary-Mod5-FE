@@ -3,13 +3,11 @@ import { connect } from 'react-redux'
 import { getAuth } from '../actions/user'
 import {withRouter} from 'react-router-dom'
 
-
 class LogInForm extends React.Component{
 
   state={
     username:'',
-    password:'',
-    password_confirmation:''
+    password:''
   }
 
   handleChange= event=>{
@@ -20,10 +18,12 @@ class LogInForm extends React.Component{
 
   handleSubmit= event=>{
     event.preventDefault()
-    if (this.props.getAuth(this.state)) {
+    this.props.getAuth(this.state)
+    if (localStorage.token) {
       this.props.history.push("/home")
+    }else {
+      this.props.history.push("/welcome")
     }
-
   }
 
   render(){
@@ -33,7 +33,6 @@ class LogInForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder= "Existing Username" name="username" value={this.state.username} onChange={this.handleChange}/>
           <input type="password" placeholder= "Password" name="password" value={this.state.password} onChange={this.handleChange}/>
-          <input type="password" placeholder= "Password" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange}/>
           <input type="submit" value= "Submit"/>
         </form>
       </div>
