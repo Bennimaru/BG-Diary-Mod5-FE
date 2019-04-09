@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createUser } from '../actions/user'
+import { addUser } from '../actions/user'
+import {withRouter} from 'react-router-dom'
 
 class SignUpForm extends React.Component{
 
   state={
-    name:'',
-    password:''
+    username:'',
+    password:'',
+    password_confirmation:''
   }
 
   handleChange= event=>{
@@ -17,8 +19,10 @@ class SignUpForm extends React.Component{
 
   handleSubmit= event=>{
     event.preventDefault()
-    console.log(this.state);
-    this.props.createUser(this.state)
+    if (this.props.addUser(this.state)) {
+      this.props.history.push("/home")
+    }
+
   }
 
   render(){
@@ -26,8 +30,9 @@ class SignUpForm extends React.Component{
       <div>
         Sign Up:
         <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder= "Make New Username" name="name" value={this.state.name} onChange={this.handleChange}/>
+          <input type="text" placeholder= "Make New Username" name="username" value={this.state.username} onChange={this.handleChange}/>
           <input type="password" placeholder= "Password" name="password" value={this.state.password} onChange={this.handleChange}/>
+          <input type="password" placeholder= "Password Confirmation" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange}/>
           <input type="submit" value= "Submit"/>
         </form>
       </div>
@@ -44,4 +49,4 @@ class SignUpForm extends React.Component{
   // }
 // }
 
-export default connect(null, {createUser})(SignUpForm)
+export default connect(null, {addUser})(withRouter(SignUpForm))
