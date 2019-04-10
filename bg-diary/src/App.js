@@ -12,7 +12,7 @@ class App extends Component {
    return localStorage.token
      ? this.props.checkToken()
      : this.props.history.push("/welcome");
- };
+  };
 
   render() {
     return (

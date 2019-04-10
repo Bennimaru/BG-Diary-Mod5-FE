@@ -8,13 +8,14 @@ class NavBar extends React.Component{
   handleLogOut = () => {
    this.props.logOut()
    this.props.history.push("/welcome")
+   localStorage.clear()
   }
 
   render(){
     return(
-      <div>
-      Welcome
-      <button onClick={this.handleLogOut}>Log Out</button>  
+      <div className="navbar">
+      Welcome {this.props.user.username}
+      <button onClick={this.handleLogOut}>Log Out</button>
       </div>
     )
   }

@@ -45,7 +45,7 @@ export const getAuth = (userInfo) => {
     return fetch('http://localhost:3005/api/v1/login',{
     method: 'POST',
     headers: {
-      'content-type': 'application/json',
+      'Content-Type': 'application/json',
       accepts: 'application/json'
     },
     body: JSON.stringify({ user: userInfo })
@@ -65,14 +65,14 @@ export const getAuth = (userInfo) => {
 export const checkToken = () => {
   return dispatch => {
     if (localStorage.token){
-    return fetch("http://localhost:3005/api/v1/profile", {
-      method: "GET",
-      headers: {
+      return fetch("http://localhost:3005/api/v1/profile", {
+        method: "GET",
+        headers: {
         Authorization: `Bearer ${localStorage.token}`
       }
     })
     .then(resp => resp.json())
     .then(json => dispatch(setUser(json)));
-  }
+    }
   };
 }

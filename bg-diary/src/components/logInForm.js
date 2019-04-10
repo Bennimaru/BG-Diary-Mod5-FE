@@ -19,11 +19,13 @@ class LogInForm extends React.Component{
   handleSubmit= event=>{
     event.preventDefault()
     this.props.getAuth(this.state)
-    if (localStorage.token) {
-      this.props.history.push("/home")
-    }else {
-      this.props.history.push("/welcome")
-    }
+    setTimeout(()=>{
+      if (localStorage.token) {
+        this.props.history.push("/home")
+      }else {
+        this.props.history.push("/welcome")
+      }
+    }, 1000)
   }
 
   render(){
