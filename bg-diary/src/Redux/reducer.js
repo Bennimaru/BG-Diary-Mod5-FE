@@ -19,7 +19,6 @@ const reducer =(state= initialState, action)=>{
         user: action.payload.user
       }
     case "LOG_OUT":
-      localStorage.clear()
       console.log(action.payload);
       return {
         ...state,
@@ -29,6 +28,11 @@ const reducer =(state= initialState, action)=>{
       return {
         ...state,
         user:action.payload.user
+      }
+    case "CREATE_WEIGHT":
+      return{
+        ...state,
+        user: {...state.user, weight: action.payload}
       }
 
     default:

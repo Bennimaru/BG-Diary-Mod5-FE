@@ -1,12 +1,14 @@
 import React from 'react'
 import NavBar from '../components/navbar'
+import Weight from '../components/weight'
 
 class Home extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="home">
         <NavBar />
+        <Weight />
       </div>
     )
   }
