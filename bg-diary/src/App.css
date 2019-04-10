@@ -10,13 +10,17 @@
   height:5vh;
 }
 
-.weightdate {
+.log {
   width: 100vw;
-  height: 40vh;
+  height: 45vh;
   border: 4px solid rgb(159, 111, 18);
   display:flex;
-
 }
+
+.chart {
+  height: 50vh;
+}
+
 #weight{
   width: 100%;
   display: flex;

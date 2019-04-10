@@ -1,6 +1,8 @@
 import React from 'react'
 import NavBar from '../components/navbar'
-import Weight from '../components/weight'
+import Log from '../components/log'
+import Chart from '../components/chart'
+
 
 class Home extends React.Component{
 
@@ -8,7 +10,8 @@ class Home extends React.Component{
     return(
       <div className="home">
         <NavBar />
-        <Weight />
+        <Log />
+        <Chart />
       </div>
     )
   }
