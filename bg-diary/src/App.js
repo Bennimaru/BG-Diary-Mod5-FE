@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Welcome from './containers/welcome'
 import Home from './containers/home'
+import Glucose from './containers/glucose'
+import Meals from './containers/meals'
 import { Route,Switch,withRouter } from "react-router-dom"
 import {checkToken} from './actions/user'
 import {connect} from 'react-redux'
@@ -20,6 +22,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/welcome" component={Welcome} />
           <Route exact path="/home" component={Home}/>
+          <Route exact path="/glucose" component={Glucose}/>
+          <Route exact path="/meals" component={Meals}/>
           <Route exact path="/logout" component={Welcome} />
         </Switch>
       </div>

@@ -5,12 +5,13 @@ import { connect } from 'react-redux'
 class Chart extends React.Component{
 
   state={
-    user:{}
+    user:''
   }
 
-  componentDidMount(){
+  chartMyWeight= event =>{
+    event.preventDefault()
     const userId= this.props.user.id
-    console.log(userId);
+    console.log("hi");
     return fetch(`http://localhost:3005/api/v1/users/${userId}`,{
       method:"GET",
       headers: {
@@ -22,25 +23,32 @@ class Chart extends React.Component{
     .then(res => res.json())
     .then(user => this.setState({
       user: user
-    }))
+    }),console.log(this.state.user.weights))
   }
 
+
   render(){
-    console.log(this.state.user.weights);
+    let data = this.state.user? this.state.user.weights:null
+    // let xValues = data.map(weights=>weights.datetime)
+    // let yValues = data.map(weights=>weights.weight)
+
     return(
       <div className='chart'>
+        <button onClick={this.chartMyWeight}>Chart</button>
         <Line
-          // data= {this.state.user}
-          options={{
-            maintainAspectRatio: false
-          }}
+
+
 
         />
       </div>
     )
   }
 }
-
+// ,
+// options={{
+//   responsive: true,
+//   maintainAspectRatio: false
+// }}
 const mapStateToProps= state =>{
   return{
     user:state.user
