@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from '../components/navbar'
+
 import { connect } from 'react-redux'
 
 class Glucose extends Component{
@@ -8,6 +9,7 @@ class Glucose extends Component{
     return(
       <div>
         <NavBar />
+
       </div>
     )
   }

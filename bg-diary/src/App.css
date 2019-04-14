@@ -2,14 +2,15 @@
   text-align: center;
 }
 
-.home{
-  /* background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196)); */
+.home {
+  background-image: url('/bg-diary/src/diabetes_word_cloud.jpg');
+  height: 100vh;
 }
 
-.navbar {
-  /* background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196));
-  height:5vh; */
-}
+/* .navbar {
+  background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196));
+  height:5vh;
+} */
 
 .link{
   padding: 2vw;
