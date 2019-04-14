@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logOut } from '../actions/user'
-import { withRouter } from 'react-router-dom'
+import { withRouter, NavLink } from 'react-router-dom'
+
 
 class NavBar extends React.Component{
 
@@ -14,17 +15,42 @@ class NavBar extends React.Component{
   render(){
     return(
       <div className="navbar">
-      Welcome {this.props.user.username}
-      <button onClick={this.handleLogOut}>Log Out</button>
+        Welcome {this.props.user.username}
+        <NavLink className='link'
+        to="/home"
+        exact
+        >Home</NavLink>
+        <NavLink className='link'
+        to="/glucose"
+        exact
+        >Glucose</NavLink>
+        <NavLink className='link'
+        to="/meals"
+        exact
+        onClick={this.handleLogOut}
+        >Meals</NavLink>
+        <NavLink className='link'
+        to="/logout"
+        exact
+        onClick={this.handleLogOut}
+        >LogOut</NavLink>
       </div>
     )
   }
 }
+
 
 const mapStateToProps = state =>{
   return{
     user:state.user
   }
 }
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     increaseVote: (id) => dispatch({ type: "INCREASE_VOTE", payload: id }),
+//     decreaseVote: (id) => dispatch({ type: "DECREASE_VOTE", payload: id })
+//   }
+// }
 
 export default connect(mapStateToProps, { logOut })(withRouter(NavBar))

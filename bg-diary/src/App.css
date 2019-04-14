@@ -3,20 +3,30 @@
 }
 
 .home{
-  background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196));
+  /* background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196)); */
 }
 
 .navbar {
-  height:5vh;
+  /* background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196));
+  height:5vh; */
 }
 
-.weightdate {
+.link{
+  padding: 2vw;
+}
+
+.log {
+  background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196));
   width: 100vw;
-  height: 40vh;
+  height: 45vh;
   border: 4px solid rgb(159, 111, 18);
   display:flex;
-
 }
+
+.chart {
+  height: 50vh;
+}
+
 #weight{
   width: 100%;
   display: flex;
