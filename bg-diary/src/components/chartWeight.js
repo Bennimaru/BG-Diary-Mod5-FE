@@ -26,10 +26,10 @@ class ChartWeight extends React.Component{
     }))
   }
 
-  weightArr = (weightData)=>{
+  weightArr = (sortedData)=>{
     let y=[]
-    if (weightData) {
-      weightData.forEach( weightObj =>{
+    if (sortedData) {
+      sortedData.forEach( weightObj =>{
         for (var key in weightObj) {
           if (weightObj.hasOwnProperty(key)){
           y.push(weightObj.weight)
@@ -40,10 +40,10 @@ class ChartWeight extends React.Component{
     return y
   }
 
-  timeArr = (weightData)=>{
+  timeArr = (sortedData)=>{
     let x=[]
-    if (weightData) {
-      weightData.forEach( weightObj =>{
+    if (sortedData) {
+      sortedData.forEach( weightObj =>{
         for (var key in weightObj) {
           if (weightObj.hasOwnProperty(key)){
           x.push(weightObj.datetime)
@@ -55,10 +55,22 @@ class ChartWeight extends React.Component{
   }
 
   render(){
-    let weightData = this.state.user? this.state.user.weights:null
+    let weightData = this.state.user? this.state.user.weights:[]
+    let sortedData =
+    weightData.sort((a,b)=> {
+      if(a.datetime < b.datetime){
+         return -1
+      }
+      if(a.datetime > b.datetime) {
+         return 1
+       }
+       return 0
+     })
+     console.log(weightData);
+
 
     const data = {
-      labels: this.timeArr(weightData),
+      labels: this.timeArr(sortedData),
       datasets: [
         {
           label: 'My Body Weight',
