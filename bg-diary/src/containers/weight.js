@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/navbar'
-import Log from '../components/log'
-import Chart from '../components/chart'
+import LogWeight from '../components/logWeight'
+import ChartWeight from '../components/chartWeight'
 import { connect } from 'react-redux'
 
 class Weight extends React.Component{
@@ -10,8 +10,8 @@ class Weight extends React.Component{
     return(
       <div>
         <NavBar />
-        <Log />
-        <Chart />
+        <LogWeight />
+        <ChartWeight />
       </div>
     )
   }

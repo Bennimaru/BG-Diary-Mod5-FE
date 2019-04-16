@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { postWeight } from '../actions/weight.js'
 
 
-class Log extends Component{
+class LogWeight extends Component{
 
   state={
     user_id:'',
@@ -36,16 +36,16 @@ class Log extends Component{
 
   render(){
     return(
-      <div className="log">
+      <div className="logweight">
         <div>
         <DateTimePicker
         onChange={this.DateChange}
         value={this.state.datetime} />
         </div>
-        <div id='weight'>
+        <div className='form'>
           <form onSubmit={this.handleSubmit}>
             <input type="text" name="datetime"   value={this.state.datetime}/>
-            <input type="number" placeholder='Enter weight in  lbs' name='weight' value={this.state.weight}   onChange={this.handleWeight}/>
+            <input type="number" placeholder='Enter weight in lbs' name='weight' value={this.state.weight}   onChange={this.handleWeight}/>
             <input type="submit"/>
           </form>
           <p>Your last recorded weight: {this.props.user.weight} lbs
@@ -62,4 +62,4 @@ const mapStateToProps= state=>{
   }
 }
 
-export default connect(mapStateToProps,{ postWeight })(Log)
+export default connect(mapStateToProps,{ postWeight })(LogWeight)

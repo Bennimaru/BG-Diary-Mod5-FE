@@ -2,7 +2,7 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 import { connect } from 'react-redux'
 
-class Chart extends React.Component{
+class ChartWeight extends React.Component{
 
   state={
     user:''
@@ -29,8 +29,6 @@ class Chart extends React.Component{
 
   render(){
     let data = this.state.user? this.state.user.weights:null
-    // let xValues = data.map(weights=>weights.datetime)
-    // let yValues = data.map(weights=>weights.weight)
 
     return(
       <div className='chart'>
@@ -55,4 +53,4 @@ const mapStateToProps= state =>{
   }
 }
 
-export default connect(mapStateToProps)(Chart)
+export default connect(mapStateToProps)(ChartWeight)
