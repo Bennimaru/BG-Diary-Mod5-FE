@@ -27,8 +27,11 @@ class NavBar extends React.Component{
         <NavLink className='link'
         to="/meals"
         exact
-        onClick={this.handleLogOut}
         >Meals</NavLink>
+        <NavLink className='link'
+        to="/weight"
+        exact
+        >Weight</NavLink>
         <NavLink className='link'
         to="/logout"
         exact
