@@ -59,15 +59,13 @@ class ChartWeight extends React.Component{
     let sortedData =
     weightData.sort((a,b)=> {
       if(a.datetime < b.datetime){
-         return -1
+        return -1
       }
       if(a.datetime > b.datetime) {
-         return 1
+        return 1
        }
-       return 0
+      return 0
      })
-     console.log(weightData);
-
 
     const data = {
       labels: this.timeArr(sortedData),
