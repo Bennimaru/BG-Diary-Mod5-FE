@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../components/navbar'
+import LogMeal from '../components/logMeal'
 import { connect } from 'react-redux'
 
 class Meals extends React.Component{
@@ -8,6 +9,7 @@ class Meals extends React.Component{
     return(
       <div>
         <NavBar />
+        <LogMeal />
       </div>
     )
   }

@@ -21,13 +21,13 @@ class NavBar extends React.Component{
         exact
         >Home</NavLink>
         <NavLink className='link'
-        to="/glucose"
-        exact
-        >Glucose</NavLink>
-        <NavLink className='link'
         to="/meals"
         exact
         >Meals</NavLink>
+        <NavLink className='link'
+        to="/glucose"
+        exact
+        >Glucose</NavLink>
         <NavLink className='link'
         to="/weight"
         exact

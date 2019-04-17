@@ -2,15 +2,20 @@
   text-align: center;
 }
 
+.welcome {
+  background-image: url('/Users/flatironschool/BG-Diary-Mod5-FE/bg-diary/src/food_cubes.jpg');
+  height:100vh;
+}
+
 .home {
   background-image: url('/bg-diary/src/diabetes_word_cloud.jpg');
   height: 100vh;
 }
 
-/* .navbar {
-  background-image: linear-gradient(to right, rgb(129, 32, 32), rgb(29, 31, 196));
-  height:5vh;
-} */
+.navbar {
+  height:4vh;
+  margin-top: 1vh;
+}
 
 .link{
   padding: 2vw;
@@ -29,6 +34,17 @@
   height: 45vh;
   border: 4px solid rgb(173, 124, 29);
   display:flex;
+}
+.logmeal {
+  background-image: url('/Users/flatironschool/BG-Diary-Mod5-FE/bg-diary/src/New-Food-Pyramid.jpg');
+  width: 100vw;
+  height: 96vh;
+  border: 4px solid rgb(32, 23, 6);
+  display:flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* opacity: 0.5; */
+  /* z-index: -1; */
 }
 
 .chart {
