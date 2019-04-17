@@ -2,7 +2,7 @@ import React from 'react'
 import DateTimePicker from 'react-datetime-picker'
 import Pic from '/Users/flatironschool/BG-Diary-Mod5-FE/bg-diary/src/New-Food-Pyramid.jpg'
 import { connect } from 'react-redux'
-
+require('dotenv').config()
 
 class LogMeal extends React.Component{
 

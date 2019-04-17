@@ -28,6 +28,7 @@
   border: 4px solid rgb(159, 111, 18);
   display:flex;
 }
+
 .logglucose {
   background-image: linear-gradient(to right, rgb(101, 67, 33), rgb(244, 245, 240));
   width: 100vw;
@@ -35,6 +36,7 @@
   border: 4px solid rgb(173, 124, 29);
   display:flex;
 }
+
 .logmeal {
   background-image: url('/Users/flatironschool/BG-Diary-Mod5-FE/bg-diary/src/New-Food-Pyramid.jpg');
   width: 100vw;
