@@ -29,7 +29,6 @@ class LogMeal extends React.Component{
   handleSearch = event =>{
     event.preventDefault()
     let searchTerm = this.state.userInput
-    console.log(searchTerm);
     return fetch(`https://trackapi.nutritionix.com/v2/search/instant?query=${searchTerm}`,{
       method:'GET',
       headers:{
@@ -39,6 +38,11 @@ class LogMeal extends React.Component{
     })
     .then(res => res.json())
     .then(data => this.setState({foodItems: data}))
+  }
+
+  handleNutritionSearch = event =>{
+    event.preventDefault()
+    console.log('hi');
   }
 
   handleSubmit = event =>{
@@ -54,13 +58,11 @@ class LogMeal extends React.Component{
 
   render(){
     console.log(this.state.foodItems);
-
-    let searchData = this.state.foodItems? this.state.foodItems.branded : []
-
+    let searchData = this.state.foodItems? this.state.foodItems.common : []
     console.log(searchData);
 
-    let foodList= searchData.map(food=>
-      <FoodItems key={food.id} food={food}/>)
+    let foodList= searchData.slice(0,3).map(food=>
+      <FoodItems key={food.food_name} food={food} search={this.handleNutritionSearch}/>)
 
     return(
       <div className='logmeal' style={{backgroundImage: `url(${Pic})`}} >
