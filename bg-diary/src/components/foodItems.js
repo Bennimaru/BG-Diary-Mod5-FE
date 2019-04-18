@@ -3,7 +3,7 @@ import React from 'react'
 const FoodItems = props =>{
 
   return(
-    <div onClick={props.search}>
+    <div onClick={e=>props.search(e,props.food.food_name)}>
       <p>{props.food.food_name}</p>
       <img src={props.food.photo.thumb} alt=''/>
     </div>

@@ -36,6 +36,11 @@ const reducer =(state= initialState, action)=>{
         ...state,
         user: {...state.user, glucose: action.payload}
       }
+    case "CREATE_MEAL":
+      return{
+        ...state,
+        user:{...state.user, meal: action.payload}
+      }
 
     default:
       return state

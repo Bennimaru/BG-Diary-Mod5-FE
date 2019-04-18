@@ -26,11 +26,7 @@ class LogGlucose extends Component{
     event.preventDefault()
     this.setState({
       user_id:this.props.user.id
-    })
-    this.props.postGlucose(this.state)
-    this.setState({
-      glucose:''
-    })
+    }, () => this.props.postGlucose(this.state))
   }
 
   render(){

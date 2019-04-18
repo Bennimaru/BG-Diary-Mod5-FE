@@ -3,7 +3,6 @@ import DateTimePicker from 'react-datetime-picker'
 import { connect } from 'react-redux'
 import { postWeight } from '../actions/weight.js'
 
-
 class LogWeight extends Component{
 
   state={
@@ -27,11 +26,7 @@ class LogWeight extends Component{
     event.preventDefault()
     this.setState({
       user_id:this.props.user.id
-    })
-    this.props.postWeight(this.state)
-    this.setState({
-      weight:''
-    })
+    }, () => this.props.postWeight(this.state))
   }
 
   render(){

@@ -77,3 +77,25 @@
   position: absolute;
   right:0;
 }
+
+#nutrition_outer{
+  text-align: left;
+  border: solid black 2px;
+  margin-top: 15vh;
+  /* margin: auto; */
+}
+
+#nutrition_inner tr{
+  font-size: 1.2rem;
+
+}
+
+#nutrition_inner td:nth-last-of-type(even){
+  font-weight: 700;
+  border: solid black 1px;
+}
+
+#nutrition_inner td:nth-last-of-type(odd){
+  font-weight: 400;
+  border: solid black 1px;
+}
