@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../components/navbar'
 import LogMeal from '../components/logMeal'
+import Attribution from '../components/apiAttribution'
 import { connect } from 'react-redux'
 
 class Meals extends React.Component{
@@ -10,6 +11,7 @@ class Meals extends React.Component{
       <div>
         <NavBar />
         <LogMeal />
+        <Attribution />
       </div>
     )
   }

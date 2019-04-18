@@ -72,3 +72,8 @@
   bottom:0;
   right:0;
 }
+
+#foodItem{
+  position: absolute;
+  right:0;
+}
