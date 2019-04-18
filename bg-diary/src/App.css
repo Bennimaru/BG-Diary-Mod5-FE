@@ -45,8 +45,6 @@
   display:flex;
   background-size: contain;
   background-repeat: no-repeat;
-  /* opacity: 0.5; */
-  /* z-index: -1; */
 }
 
 .chart {
@@ -65,4 +63,12 @@
 .form input{
   width: 100%;
   display: inline-block;
+}
+
+#attribution{
+  width:30vw;
+  height:15vh;
+  position:absolute;
+  bottom:0;
+  right:0;
 }

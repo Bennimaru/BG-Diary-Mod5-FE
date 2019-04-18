@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Line } from 'react-chartjs-2'
 import { connect } from 'react-redux'
 
+
 class ChartGlucose extends Component{
 
   state={
@@ -10,7 +11,6 @@ class ChartGlucose extends Component{
 
   chartMyGlucose= event =>{
     event.preventDefault()
-    console.log('hi');
     const userId= this.props.user.id
     return fetch(`http://localhost:3005/api/v1/users/${userId}`,{
       method:"GET",
